@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+    <string name="hello">안녕하세요.</string>
+    <string name="test">파라미터 메세지 테스트. 첫번째:{1} 두번째:{2};</string>
+</messages>

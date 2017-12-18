@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common>
+    <AutoWiring id="printer" class="org\test\Printer" />
+
+    <AutoWiring id="testObject" class="TestObject">
+        <constructor-arg index="0" value="First Argument"/>
+        <constructor-arg index="1" value="Second Argument"/>
+        <property name="name" value="TestObjectNameProperty" />
+        <property name="test1">TestObjectTestProperty</property>
+        <property name="test2">
+            <list>
+                <value>1</value>
+                <value value="2" />
+                <ref id="printer" />
+            </list>
+        </property>
+        <property name="core" ref="Core" />
+        <property name="printer" ref="printer" />
+    </AutoWiring>
+
+    <setting name="default_cookiePath">/</setting>
+    <setting name="default_cookieDomain"></setting>
+
+    <AutoWiring id="localeResolver" class="JsGreenTeaPHPFramework\i18n\CookieLocaleResolver">
+        <property name="cookieName" value="clientLang" />
+        <property name="cookieMaxAge" value="-1" />
+        <property name="cookiePath" value="/" />
+        <property name="cookieDomain" value="#{setting/default_cookiePath}" />
+        <property name="defaultLocale" value="ko" />
+    </AutoWiring>
+
+    <AutoWiring id="localeChangeInterceptor" class="JsGreenTeaPHPFramework\i18n\LocaleChangeInterceptor">
+        <property name="paramName" value="lang" />
+    </AutoWiring>
+
+    <AutoWiring class="JsGreenTeaPHPFramework\Core">
+        <property name="urlInterceptors">
+            <list>
+                <ref id="localeChangeInterceptor" />
+            </list>
+        </property>
+    </AutoWiring>
+
+    <AutoWiring class="JsGreenTeaPHPFramework\Session">
+        <property name="cookieMaxAge" value="0" />
+        <property name="cookieDomain" value="" />
+        <property name="cookiePath" value="/" />
+        <property name="cookieSecure" value="false" />
+    </AutoWiring>
+
+    <AutoWiring id="messageSource" class="JsGreenTeaPHPFramework\MessageSource">
+        <property name="defaultLocale" value="ko" />
+    </AutoWiring>
+
+    <head><![CDATA[
+        <head charset="utf-8" />
+]]></head>
+
+    <head lang="ko"><![CDATA[
+        <link rel="stylesheet" type="text/css" href="style_ko.css" />
+]]></head>
+
+    <head lang="en"><![CDATA[
+        <link rel="stylesheet" type="text/css" href="style_en.css" />
+]]></head>
+</common>

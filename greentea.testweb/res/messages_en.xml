@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+    <string name="hello">Hello.</string>
+    <string name="test">Parameter message test. Second:{2} First:{1};</string>
+</messages>
