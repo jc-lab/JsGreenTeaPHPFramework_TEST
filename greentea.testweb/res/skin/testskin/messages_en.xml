@@ -4,6 +4,6 @@
         <link rel="stylesheet" type="text/css" href="style_en.css" />
 ]]></string>
 
-    <string name="hello">Hello.</string>
+    <string name="hello">Hello This skin is testskin.</string>
     <string name="test">Parameter message test. Second:{2} First:{1};</string>
 </messages>

@@ -4,10 +4,11 @@ class TestController extends \JsGreenTeaPHPFramework\Controller
 {
     public function init()
     {
-        self::setRoute('', 'viewDefault');
-        self::setRoute('/', 'viewDefault2');
-        self::setRoute('/{pckey}', 'viewPCKEY');
-        self::setRoute('/{pckey}/', 'viewPCKEY');
+        self::setRoute('', 'viewDefault', METHOD_BOTH);
+        self::setRoute('/', 'viewDefault2', METHOD_BOTH);
+        self::setRoute('/{pckey}', 'viewPCKEY', METHOD_BOTH);
+        self::setRoute('/{pckey}/', 'viewPCKEY', METHOD_GET);
+        self::setRoute('/{pckey}/', 'viewPCKEY', METHOD_POST);
     }
 
     public function viewDefault(&$request, &$response, &$parameters)

@@ -21,7 +21,7 @@ class SiteConfig extends BaseConfig
         $this->sitesql_dbname = "testsite";
         $this->sitesql_tableprefix = "site_";
 
-        $this->frameworkredis_host = NULL; // "localhost";
+        $this->frameworkredis_host = NULL;// "localhost";
         $this->frameworkredis_port = 6379;
         $this->frameworkredis_password = NULL;
         $this->frameworkredis_dbidx = 0;

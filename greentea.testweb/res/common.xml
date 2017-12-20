@@ -33,10 +33,17 @@
         <property name="paramName" value="lang" />
     </AutoWiring>
 
+    <AutoWiring id="skinSupportInterceptor" class="JsGreenTeaPHPFramework\skin\SkinSupportInterceptor">
+        <property name="skinViewPath" value="skin/" />
+        <property name="skinResPath" value="skin/" />
+        <property name="defaultSkin" value="testskin" />
+    </AutoWiring>
+
     <AutoWiring class="JsGreenTeaPHPFramework\Core">
         <property name="urlInterceptors">
             <list>
                 <ref id="localeChangeInterceptor" />
+                <ref id="skinSupportInterceptor" />
             </list>
         </property>
     </AutoWiring>
@@ -48,19 +55,12 @@
         <property name="cookieSecure" value="false" />
     </AutoWiring>
 
+    <!-- "messageSource" name is fixed -->
     <AutoWiring id="messageSource" class="JsGreenTeaPHPFramework\MessageSource">
         <property name="defaultLocale" value="ko" />
     </AutoWiring>
 
-    <head><![CDATA[
+    <string name="html_head_common"><![CDATA[
         <head charset="utf-8" />
-]]></head>
-
-    <head lang="ko"><![CDATA[
-        <link rel="stylesheet" type="text/css" href="style_ko.css" />
-]]></head>
-
-    <head lang="en"><![CDATA[
-        <link rel="stylesheet" type="text/css" href="style_en.css" />
-]]></head>
+]]></string>
 </common>
